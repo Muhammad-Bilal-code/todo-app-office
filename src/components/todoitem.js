@@ -8,7 +8,10 @@ const Item = styled(Paper)(({ theme }) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
-function ToDoItem(){
+function ToDoItem(props){
+
+    
+
     return (
         <>
         <Grid container spacing={2} className="todo-item-prnt">
@@ -16,10 +19,10 @@ function ToDoItem(){
           <Item>01</Item>
         </Grid>
         <Grid item xs={3}>
-          <Item>Title</Item>
+          <Item>{props.title}</Item>
         </Grid>
         <Grid item xs={5}>
-          <Item>Desc</Item>
+          <Item>{props.desc}</Item>
         </Grid>
         <Grid item xs={0.5}>
           <Button variant="contained" size="medium">Edit</Button>

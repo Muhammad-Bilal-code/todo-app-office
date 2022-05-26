@@ -2,20 +2,29 @@
 import "./App.css";
 import Form from "./components/form";
 import Todos from "./components/todos";
+import {useState} from "react"
+
 
 // const formDataWithNo = {math.random(),...}
 
 
-const handleGetFormData = (formData) =>{
-  console.log("Test")
-console.log("App File",formData)
-}
+
+
 
 function App() {
+
+  const[formDataArr,setFormDataArr] = useState([])
+
+  const handleGetFormData = (formData) =>{
+    console.log("Test")
+  setFormDataArr([...formDataArr,formData])
+    console.log("App File",formData)
+    console.log(formDataArr)
+  }
   return (
     <>
     <Form getFormData = {handleGetFormData}/>
-    <Todos/>
+    <Todos formDataArr = {formDataArr} setFormDataArr = {setFormDataArr}/>
     </>
   );
 }

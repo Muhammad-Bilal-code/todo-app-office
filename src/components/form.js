@@ -54,7 +54,7 @@ function Form(props) {
           </Grid>
           <Grid item xs={1}>
             
-          <Button type = "submit" variant="contained" size="medium" onSubmit={(e)=>{e.preventDefault();props.getFormData(input)}}>Add</Button>
+          <Button type = "submit" variant="contained" size="medium" onClick={(e)=>{e.preventDefault();props.getFormData(input);setInput({title:"",desc:""})}} disabled>Add</Button>
             
           </Grid>
         </Grid>

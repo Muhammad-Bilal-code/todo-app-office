@@ -16,7 +16,7 @@ function ToDoItem(props){
         <>
         <Grid container spacing={2} className="todo-item-prnt">
         <Grid item xs={0.5}>
-          <Item>01</Item>
+          <Item>{props.sNo}</Item>
         </Grid>
         <Grid item xs={3}>
           <Item>{props.title}</Item>
@@ -28,7 +28,7 @@ function ToDoItem(props){
           <Button variant="contained" size="medium">Edit</Button>
         </Grid>
         <Grid item xs={0.5}>
-          <Button variant="contained" size="medium">Delete</Button>
+          <Button variant="contained" size="medium" onClick={props.delete}>Delete</Button>
         </Grid>
 
       </Grid>

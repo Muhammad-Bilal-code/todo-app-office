@@ -12,19 +12,26 @@ import {useState} from "react"
 
 
 function App() {
-
+  
+  
   const[formDataArr,setFormDataArr] = useState([])
-
+  // console.log(formDataArr)
   const handleGetFormData = (formData) =>{
-    console.log("Test")
-  setFormDataArr([...formDataArr,formData])
-    console.log("App File",formData)
+    // console.log(formData)
+    // console.log("Test")
+    setFormDataArr([formData,...formDataArr])
     console.log(formDataArr)
   }
+  
+    const handleClearAll = ()=>{
+      setFormDataArr([])
+  }
+
+  
   return (
     <>
     <Form getFormData = {handleGetFormData}/>
-    <Todos formDataArr = {formDataArr} setFormDataArr = {setFormDataArr}/>
+    <Todos formDataArr = {formDataArr} setFormDataArr = {setFormDataArr} clearAll = {handleClearAll}/>
     </>
   );
 }

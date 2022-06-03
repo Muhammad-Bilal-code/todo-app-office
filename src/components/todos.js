@@ -8,18 +8,19 @@ function Todos(props){
 
         
 
-        // const [deletedArr,setDeletedArr] = useState("test")
-        // console.log(deletedArr)
-        const handleDelete = () => {
-            console.log("test")
-            console.log(props.formDataArr)
-        }
+
+        // const handleDelete = (key) =>{
+        //     console.log("Bilal")
+        //     props.setFormDataArr(props.formDataArr.filter((v,i)=> v.key !== key))
+        //     // console.log(`my key ${key}`)
+        //   }
+        
         
     return (
         <div className="todos-prnt">
             <h2>ToDo List</ h2>
         {
-            props.formDataArr.map((v,i)=><ToDoItem title = {v.title} desc = {v.desc} sNo = {++i} delete = {handleDelete}></ToDoItem>)
+            props.formDataArr.map((v,i)=><ToDoItem title = {v.title} desc = {v.desc} sNo = {++i}  delete = {()=>{props.delete(v.key)}}></ToDoItem>)
         }
         <Button variant="outlined" color="error" onClick={props.clearAll}>Clear All</Button>
         </div>

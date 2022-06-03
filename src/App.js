@@ -19,7 +19,7 @@ function App() {
   const handleGetFormData = (formData) =>{
     // console.log(formData)
     // console.log("Test")
-    setFormDataArr([formData,...formDataArr])
+    setFormDataArr([...formDataArr,formData])
     console.log(formDataArr)
   }
   
@@ -27,11 +27,15 @@ function App() {
       setFormDataArr([])
   }
 
-  
+  const handleDelete = (key) =>{
+        console.log("Bilal")
+        setFormDataArr(formDataArr.filter((v,i)=> v.key !== key))
+        // console.log(`my key ${key}`)
+      }
   return (
     <>
     <Form getFormData = {handleGetFormData}/>
-    <Todos formDataArr = {formDataArr} setFormDataArr = {setFormDataArr} clearAll = {handleClearAll}/>
+    <Todos formDataArr = {formDataArr} setFormDataArr = {setFormDataArr} clearAll = {handleClearAll} delete = {handleDelete}/>
     </>
   );
 }
